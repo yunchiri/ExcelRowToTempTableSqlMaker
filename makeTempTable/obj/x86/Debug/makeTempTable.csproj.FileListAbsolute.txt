@@ -1,0 +1,7 @@
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\bin\Debug\makeTempTable.exe
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\bin\Debug\makeTempTable.pdb
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Debug\makeTempTable.Form1.resources
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Debug\makeTempTable.Properties.Resources.resources
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Debug\makeTempTable.csproj.GenerateResource.Cache
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Debug\makeTempTable.exe
+c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Debug\makeTempTable.pdb
