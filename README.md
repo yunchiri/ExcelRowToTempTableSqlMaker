@@ -55,3 +55,6 @@ select '최주연' AS C0,'201012' AS C1 from dual
 형식으로 만들어줌
                     
                     
+##download
+옆에 download.zip 눌면 다운됨 
+/bin/release/ folder안에 있음.
