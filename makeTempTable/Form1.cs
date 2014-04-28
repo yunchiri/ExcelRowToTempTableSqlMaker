@@ -28,11 +28,12 @@ namespace makeTempTable
 
         private void createScript()
         {
-            this.output.Text = "";
+            this.output.Clear();
             this.label1.Text = "";
 
             string dataSource = this.richTextBox1.Text;
 
+            if (dataSource.Length == 0) return;
             try
             {
 
@@ -97,17 +98,20 @@ namespace makeTempTable
                 }
             }
 
-            string query;
-            if (checkBox1.Checked)
+            //string query;
+            if (uiaddwith.Checked)
             {
-                query = tempTableTemplete(sb.ToString());
+                return withTemplete(sb.ToString());
+                
+                
             }
-            else
+            if (uiaddtemporytable.Checked)
             {
-                query = sb.ToString();
+                return tempTableTemplete(sb.ToString());
             }
-
-            return query;
+            
+            return sb.ToString();
+;
         }
         private string[] makeGoodData(string[] dataSet)
         {
@@ -135,15 +139,32 @@ namespace makeTempTable
 
         private string tempTableTemplete(string source)
         {
-            string templete = string.Format( @" CREATE  GLOBAL TEMPORARY TABLE tempTalbe_{0:HHmmss}
-        ON  COMMIT  PRESERVE ROWS
-        AS (
-            select * from 
-            (
-            {1}
-            )
-        )
+            string templete = string.Format(
+            @" CREATE  GLOBAL TEMPORARY TABLE tempTalbe_{0:HHmmss}
+                   ON  COMMIT  PRESERVE ROWS
+                 AS (
+                     select * from 
+                      (
+                      {1}
+                      )
+                  )
         ", DateTime.Now, source);
+
+            return templete;
+        }
+
+        private string withTemplete(string source)
+        {
+            string templete = string.Format(
+            @" WITH  T
+                    AS (
+                        select * from 
+                        (
+                        {0}
+                        )
+                    )
+                Select * From T
+                    ",source);
 
             return templete;
         }
@@ -151,6 +172,22 @@ namespace makeTempTable
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             createScript();
+        }
+
+        private void reset()
+        {
+            this.output.Clear();
+            createScript();
+        }
+
+        private void uiaddwith_CheckedChanged(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void uiaddtemporytable_CheckedChanged(object sender, EventArgs e)
+        {
+            reset();
         }
     }
 }

@@ -30,15 +30,16 @@
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.output = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.uiaddwith = new System.Windows.Forms.RadioButton();
+            this.uiaddtemporytable = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 47);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 52);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(562, 105);
             this.richTextBox1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 13);
+            this.button1.Location = new System.Drawing.Point(230, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -55,22 +56,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox1.Location = new System.Drawing.Point(12, 18);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(136, 16);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "add temptable script";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // output
             // 
-            this.output.Location = new System.Drawing.Point(12, 178);
+            this.output.Location = new System.Drawing.Point(12, 183);
             this.output.Name = "output";
             this.output.Size = new System.Drawing.Size(562, 105);
             this.output.TabIndex = 5;
@@ -79,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 18);
+            this.label1.Location = new System.Drawing.Point(322, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 12);
             this.label1.TabIndex = 6;
@@ -88,21 +76,46 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 163);
+            this.label2.Location = new System.Drawing.Point(10, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 12);
             this.label2.TabIndex = 7;
             this.label2.Text = "output";
             // 
+            // uiaddwith
+            // 
+            this.uiaddwith.AutoSize = true;
+            this.uiaddwith.Checked = true;
+            this.uiaddwith.Location = new System.Drawing.Point(12, 8);
+            this.uiaddwith.Name = "uiaddwith";
+            this.uiaddwith.Size = new System.Drawing.Size(106, 16);
+            this.uiaddwith.TabIndex = 8;
+            this.uiaddwith.TabStop = true;
+            this.uiaddwith.Text = "add with script";
+            this.uiaddwith.UseVisualStyleBackColor = true;
+            this.uiaddwith.CheckedChanged += new System.EventHandler(this.uiaddwith_CheckedChanged);
+            // 
+            // uiaddtemporytable
+            // 
+            this.uiaddtemporytable.AutoSize = true;
+            this.uiaddtemporytable.Location = new System.Drawing.Point(12, 30);
+            this.uiaddtemporytable.Name = "uiaddtemporytable";
+            this.uiaddtemporytable.Size = new System.Drawing.Size(160, 16);
+            this.uiaddtemporytable.TabIndex = 9;
+            this.uiaddtemporytable.Text = "add tempory table script";
+            this.uiaddtemporytable.UseVisualStyleBackColor = true;
+            this.uiaddtemporytable.CheckedChanged += new System.EventHandler(this.uiaddtemporytable_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 295);
+            this.ClientSize = new System.Drawing.Size(587, 297);
+            this.Controls.Add(this.uiaddtemporytable);
+            this.Controls.Add(this.uiaddwith);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.output);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form1";
@@ -116,10 +129,11 @@
 
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox output;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton uiaddwith;
+        private System.Windows.Forms.RadioButton uiaddtemporytable;
     }
 }
 
