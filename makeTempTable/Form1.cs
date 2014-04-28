@@ -41,11 +41,11 @@ namespace makeTempTable
 
                 Clipboard.SetData(DataFormats.UnicodeText, outputString);
 
-                this.label1.Text = "클립보드 복사했음";
+                this.label1.Text = "Copy to Clipboard";
             }
             catch (Exception e)
             {
-                MessageBox.Show(">< 무슨에러인지 모르겠는데 발생함;;;;");
+                MessageBox.Show(">< Sorry Exception;;;;");
             }
         }
 
@@ -124,7 +124,7 @@ namespace makeTempTable
                 int columnCount = column.Count();
                 if (headerColumnCount != columnCount)
                 {
-                    MessageBox.Show("헤더 컬럼 숫자와 로우 컬럼 숫자 일치하지 않음");
+                    MessageBox.Show( string.Format("Check Source, diff header column count with row{0} column count",idx));
                 }
 
             }

@@ -51,7 +51,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "스크립트생성";
+            this.button1.Text = "create";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -63,9 +63,9 @@
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox1.Location = new System.Drawing.Point(12, 18);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(185, 16);
+            this.checkBox1.Size = new System.Drawing.Size(136, 16);
             this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "임시테이블생성 스크립트 추가";
+            this.checkBox1.Text = "add temptable script";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // output
@@ -81,9 +81,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(330, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 12);
+            this.label1.Size = new System.Drawing.Size(168, 12);
             this.label1.TabIndex = 6;
-            this.label1.Text = "붙여넣기하면 자동으로 클립보드로 복사됨";
+            this.label1.Text = "results will copy to clipboard";
             // 
             // label2
             // 
