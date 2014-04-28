@@ -14,6 +14,19 @@ namespace makeTempTable
                 return string.Format("to_date('{0}','yyyy-mm-dd')", target);
             }
 
+            int numberInt;
+            if ( Int32.TryParse(target, out numberInt))
+            {
+                return string.Format("to_number('{0}')", target); 
+            }
+
+            float numberfloat;
+            if (float.TryParse(target, out numberfloat))
+            {
+                return string.Format("to_number('{0}')", target);
+            }
+
+
             if (target == "null") return @"CAST(''as varchar2(100))" ;
 
 

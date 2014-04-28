@@ -5,3 +5,4 @@ c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTa
 c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.csproj.GenerateResource.Cache
 c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.exe
 c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.pdb
+C:\Users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.csprojResolveAssemblyReference.cache
