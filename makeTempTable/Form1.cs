@@ -189,5 +189,10 @@ namespace makeTempTable
         {
             reset();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
     }
 }
