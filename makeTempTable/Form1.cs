@@ -38,6 +38,9 @@ namespace makeTempTable
             {
 
                 string outputString = getQuery(dataSource);
+
+                if (outputString == null) return;
+
                 this.output.Text = outputString;
 
                 Clipboard.SetData(DataFormats.UnicodeText, outputString);
@@ -63,7 +66,7 @@ namespace makeTempTable
             //make good data
             string[] fixedRow = makeGoodData(rows);
 
-
+            if (fixedRow == null) return null;
 
 
             StringBuilder sb = new StringBuilder();
@@ -128,7 +131,13 @@ namespace makeTempTable
                 int columnCount = column.Count();
                 if (headerColumnCount != columnCount)
                 {
-                    MessageBox.Show( string.Format("Check Source, diff header column count with row{0} column count",idx));
+                    DialogResult result = MessageBox.Show(string.Format("Check Source, diff header column count with row{0} column count, (Yes =Delete Data , No = igore)", idx), "Cancle?",MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                       
+                        richTextBox1.Clear();
+                        return null;
+                    }
                 }
 
             }
