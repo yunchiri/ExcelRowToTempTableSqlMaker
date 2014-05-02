@@ -60,6 +60,7 @@
             // 
             // output
             // 
+            this.output.Enabled = false;
             this.output.Location = new System.Drawing.Point(12, 183);
             this.output.Name = "output";
             this.output.Size = new System.Drawing.Size(562, 105);

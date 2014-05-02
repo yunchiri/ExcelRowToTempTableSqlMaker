@@ -28,6 +28,7 @@ namespace makeTempTable
 
         private void createScript()
         {
+            this.output.Enabled = false;
             this.output.Clear();
             this.label1.Text = "";
 
@@ -44,6 +45,7 @@ namespace makeTempTable
                 this.output.Text = outputString;
 
                 Clipboard.SetData(DataFormats.UnicodeText, outputString);
+                output.Enabled = true;
 
                 this.label1.Text = "Copy to Clipboard";
             }
@@ -136,6 +138,7 @@ namespace makeTempTable
                     {
                        
                         richTextBox1.Clear();
+                        output.Enabled = false;
                         return null;
                     }
                 }
