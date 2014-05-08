@@ -26,6 +26,11 @@ namespace makeTempTable
                 return string.Format("to_number('{0}')", target);
             }
 
+            if (target.Contains(@"'") == true)
+            {
+               target =  target.Replace(@"'", @"''");
+            }
+
 
             if (target == "null") return @"CAST(''as varchar2(100))" ;
 
