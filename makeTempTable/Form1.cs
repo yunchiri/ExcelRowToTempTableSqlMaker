@@ -85,7 +85,8 @@ namespace makeTempTable
                 //column loop
                 for (int idx2 = 0; idx2 < columnCount; idx2++)
                 {
-                    sb.Append(StringWrap.StringAddQuoto(column[idx2]));
+                    //sb.Append(StringWrap.StringAddQuoto(column[idx2]));
+                    sb.Append(StringWrap.StringAddQuoto(column[idx2],uiAutoToNumber.Checked));
                     sb.Append(string.Format(" AS C{0}", idx2));
 
                     if (idx2 != columnCount - 1)

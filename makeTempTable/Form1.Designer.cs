@@ -36,6 +36,7 @@
             this.uiaddwith = new System.Windows.Forms.RadioButton();
             this.uiaddtemporytable = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.uiAutoToNumber = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -121,11 +122,22 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // uiAutoToNumber
+            // 
+            this.uiAutoToNumber.AutoSize = true;
+            this.uiAutoToNumber.Location = new System.Drawing.Point(408, 5);
+            this.uiAutoToNumber.Name = "uiAutoToNumber";
+            this.uiAutoToNumber.Size = new System.Drawing.Size(114, 16);
+            this.uiAutoToNumber.TabIndex = 11;
+            this.uiAutoToNumber.Text = "Auto to_Number";
+            this.uiAutoToNumber.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 297);
+            this.Controls.Add(this.uiAutoToNumber);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.uiaddtemporytable);
             this.Controls.Add(this.uiaddwith);
@@ -151,6 +163,7 @@
         private System.Windows.Forms.RadioButton uiaddwith;
         private System.Windows.Forms.RadioButton uiaddtemporytable;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox uiAutoToNumber;
     }
 }
 
