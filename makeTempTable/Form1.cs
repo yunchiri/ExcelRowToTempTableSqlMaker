@@ -128,8 +128,18 @@ namespace makeTempTable
             {
                 if (dataSet[idx] == "") continue;
                 if (dataSet[idx].StartsWith("\t")) dataSet[idx] = "null" + dataSet[idx];
-                if (dataSet[idx].Contains("\t\t")) dataSet[idx] = dataSet[idx].Replace("\t\t", "\tnull\t");
-
+                //if (dataSet[idx].Contains("\t\t")) dataSet[idx] = dataSet[idx].Replace("\t\t", "\tnull\t");
+                while (true)
+                {
+                    if (dataSet[idx].Contains("\t\t"))
+                    {
+                        dataSet[idx] = dataSet[idx].Replace("\t\t", "\tnull\t");
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
                 string[] column = dataSet[idx].Trim().Split('\t');
                 int columnCount = column.Count();
                 if (headerColumnCount != columnCount)
