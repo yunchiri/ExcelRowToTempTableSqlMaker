@@ -6,13 +6,7 @@ namespace makeTempTable
     {
         public static string StringAddQuoto(string target)
         {
-            DateTime x;
-            bool isDate = DateTime.TryParse( target,out x);
 
-            if (isDate)
-            {
-                return string.Format("to_date('{0}','yyyy-mm-dd')", target);
-            }
 
             
             int numberInt;
@@ -32,6 +26,14 @@ namespace makeTempTable
                target =  target.Replace(@"'", @"''");
             }
 
+            DateTime x;
+            bool isDate = DateTime.TryParse(target, out x);
+
+            if (isDate)
+            {
+                return string.Format("to_date('{0}','yyyy-mm-dd')", target);
+            }
+
 
             if (target == "null") return @"CAST(''as varchar2(100))" ;
 
@@ -42,14 +44,7 @@ namespace makeTempTable
 
         public static string StringAddQuoto(string target,bool isAutoToNumber)
         {
-            DateTime x;
-            bool isDate = DateTime.TryParse(target, out x);
-
-            if (isDate)
-            {
-                return string.Format("to_date('{0}','yyyy-mm-dd')", target);
-            }
-
+    
             if (isAutoToNumber == true)
             {
                 int numberInt;
@@ -65,6 +60,17 @@ namespace makeTempTable
                     return string.Format("to_number('{0}')", target);
                 }
             }
+
+
+            DateTime x;
+            bool isDate = DateTime.TryParse(target, out x);
+
+            if (isDate)
+            {
+                return string.Format("to_date('{0}','yyyy-mm-dd')", target);
+            }
+
+
 
             if (target.Contains(@"'") == true)
             {
