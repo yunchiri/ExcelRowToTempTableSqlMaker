@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 namespace makeTempTable
 {
     public static class StringWrap
@@ -14,6 +15,15 @@ namespace makeTempTable
             {
                 return string.Format("to_number('{0}')", target); 
             }
+
+            Double numberDouble;
+            if (Double.TryParse(target, out numberDouble))
+            {
+                return string.Format("to_number('{0}')", target); 
+            }
+
+            
+
 
             float numberfloat;
             if (float.TryParse(target, out numberfloat))
@@ -42,8 +52,31 @@ namespace makeTempTable
 
         }
 
-        public static string StringAddQuoto(string target,bool isAutoToNumber)
+        public static string StringAddQuoto(string target,bool isAutoToNumber, string headerType)
         {
+            if (headerType != null)
+            {
+                switch (headerType)
+                {
+                    case "number" :
+
+                        return string.Format("to_number('{0}')", target);
+                        
+                    case "date" : 
+                        return string.Format("to_date('{0}','yyyy-mm-dd')", target);
+
+                    default :
+                            if (target.Contains(@"'") == true)
+                            {
+                                target = target.Replace(@"'", @"''");
+                            }
+
+
+                            if (target == "null") return @"CAST(''as varchar2(100))";
+                            return "\'" + target + "\'";
+
+                }
+            }
     
             if (isAutoToNumber == true)
             {
@@ -52,7 +85,12 @@ namespace makeTempTable
                 {
                     return string.Format("to_number('{0}')", target);
                 }
-            
+
+                Double numberDouble;
+                if (Double.TryParse(target, out numberDouble))
+                {
+                    return string.Format("to_number('{0}')", target);
+                }
 
                 float numberfloat;
                 if (float.TryParse(target, out numberfloat))
@@ -60,6 +98,7 @@ namespace makeTempTable
                     return string.Format("to_number('{0}')", target);
                 }
             }
+
 
 
             DateTime x;

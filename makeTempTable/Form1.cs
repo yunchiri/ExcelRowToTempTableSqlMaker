@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace makeTempTable
 {
@@ -55,6 +56,7 @@ namespace makeTempTable
             }
         }
 
+
         private string getQuery(string dataSource)
         {
            
@@ -67,11 +69,26 @@ namespace makeTempTable
 
             //make good data
             string[] fixedRow = makeGoodData(rows);
+            List<string> typeArray = new List<string>(10);
 
             if (fixedRow == null) return null;
 
 
             StringBuilder sb = new StringBuilder();
+
+            //header
+            if (chkExistHeader.Checked == true)
+            {
+                string[] column = fixedRow[0].Trim().Split('\t');
+                int columnCount = column.Count();
+
+                for (int idx2 = 0; idx2 < columnCount; idx2++)
+                {
+                    typeArray.Add(column[idx2]);
+
+                }
+            }
+
 
 
             //row loop
@@ -85,8 +102,16 @@ namespace makeTempTable
                 //column loop
                 for (int idx2 = 0; idx2 < columnCount; idx2++)
                 {
-                    //sb.Append(StringWrap.StringAddQuoto(column[idx2]));
-                    sb.Append(StringWrap.StringAddQuoto(column[idx2],uiAutoToNumber.Checked));
+                    if (chkExistHeader.Checked == true)
+                    {
+                        //string headerType = ;
+                        sb.Append(StringWrap.StringAddQuoto(column[idx2], uiAutoToNumber.Checked, typeArray[idx2]));
+                    }
+                    else
+                    {
+                        sb.Append(StringWrap.StringAddQuoto(column[idx2], uiAutoToNumber.Checked, null));
+                    }
+
                     sb.Append(string.Format(" AS C{0}", idx2));
 
                     if (idx2 != columnCount - 1)
@@ -123,6 +148,7 @@ namespace makeTempTable
         {
             if (dataSet.Last() == "") dataSet = dataSet.Where(w => w != dataSet.Last()).ToArray();
 
+            string sPattern = "\\t\\s+\\t";
 
             for (int idx = 0; idx < dataSet.Count(); idx++)
             {
@@ -135,15 +161,28 @@ namespace makeTempTable
                     {
                         dataSet[idx] = dataSet[idx].Replace("\t\t", "\tnull\t");
                     }
+                    if (Regex.IsMatch(dataSet[idx], sPattern))
+                    {
+                        Regex rgx = new Regex(sPattern);
+
+                        dataSet[idx] = rgx.Replace(dataSet[idx], "\tnull\t");
+
+                        break;
+                    }
                     else
                     {
                         break;
                     }
+                    
                 }
                 string[] column = dataSet[idx].Trim().Split('\t');
+                
                 int columnCount = column.Count();
                 if (headerColumnCount != columnCount)
                 {
+                    //걍 널처리 
+                    //@"CAST(''as varchar2(100))"
+
                     DialogResult result = MessageBox.Show(string.Format("Check Source, diff header column count with row{0} column count, (Yes =Delete Data , No = igore)", idx), "Cancle?",MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {

@@ -37,6 +37,7 @@
             this.uiaddtemporytable = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.uiAutoToNumber = new System.Windows.Forms.CheckBox();
+            this.chkExistHeader = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -71,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(406, 24);
+            this.label1.Location = new System.Drawing.Point(406, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 12);
             this.label1.TabIndex = 6;
@@ -125,18 +126,29 @@
             // uiAutoToNumber
             // 
             this.uiAutoToNumber.AutoSize = true;
-            this.uiAutoToNumber.Location = new System.Drawing.Point(408, 5);
+            this.uiAutoToNumber.Location = new System.Drawing.Point(408, 3);
             this.uiAutoToNumber.Name = "uiAutoToNumber";
             this.uiAutoToNumber.Size = new System.Drawing.Size(114, 16);
             this.uiAutoToNumber.TabIndex = 11;
             this.uiAutoToNumber.Text = "Auto to_Number";
             this.uiAutoToNumber.UseVisualStyleBackColor = true;
             // 
+            // chkExistHeader
+            // 
+            this.chkExistHeader.AutoSize = true;
+            this.chkExistHeader.Location = new System.Drawing.Point(408, 19);
+            this.chkExistHeader.Name = "chkExistHeader";
+            this.chkExistHeader.Size = new System.Drawing.Size(95, 16);
+            this.chkExistHeader.TabIndex = 12;
+            this.chkExistHeader.Text = "header Exist";
+            this.chkExistHeader.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 297);
+            this.Controls.Add(this.chkExistHeader);
             this.Controls.Add(this.uiAutoToNumber);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.uiaddtemporytable);
@@ -164,6 +176,7 @@
         private System.Windows.Forms.RadioButton uiaddtemporytable;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox uiAutoToNumber;
+        private System.Windows.Forms.CheckBox chkExistHeader;
     }
 }
 
