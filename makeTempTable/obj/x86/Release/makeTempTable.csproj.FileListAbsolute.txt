@@ -5,3 +5,11 @@ c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTa
 c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.csproj.GenerateResource.Cache
 c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.exe
 c:\users\kimchiri\documents\visual studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.pdb
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.exe
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.pdb
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\bin\Release\makeTempTable.exe
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\bin\Release\makeTempTable.pdb
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.csprojResolveAssemblyReference.cache
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.Form1.resources
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.Properties.Resources.resources
+C:\Users\ajou\Documents\Visual Studio 2010\Projects\makeTempTable\makeTempTable\obj\x86\Release\makeTempTable.csproj.GenerateResource.Cache

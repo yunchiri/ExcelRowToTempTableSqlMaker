@@ -112,7 +112,10 @@ namespace makeTempTable
                         sb.Append(StringWrap.StringAddQuoto(column[idx2], uiAutoToNumber.Checked, null));
                     }
 
-                    sb.Append(string.Format(" AS C{0}", idx2));
+                    if (idx == 0)
+                    {
+                        sb.Append(string.Format(" AS C{0}", idx2));
+                    }
 
                     if (idx2 != columnCount - 1)
                     {
@@ -220,10 +223,7 @@ namespace makeTempTable
             string templete = string.Format(
             @" WITH  T
                     AS (
-                        select * from 
-                        (
                         {0}
-                        )
                     )
                 Select * From T
                     ",source);
